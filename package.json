@@ -1,0 +1,10 @@
+{
+  "name": "moku-toa",
+  "version": "1.0.0",
+  "description": "bot for my discord server",
+  "main": "index.js",
+  "repository": "git@github.com:lowfitoa/moku-toa.git",
+  "author": "lowfitoa <xnick411@dicolabs.kr>",
+  "license": "MIT",
+  "private": true
+}
