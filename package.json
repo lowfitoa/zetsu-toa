@@ -2,9 +2,16 @@
   "name": "moku-toa",
   "version": "1.0.0",
   "description": "bot for my discord server",
-  "main": "index.js",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node ."
+  },
   "repository": "git@github.com:lowfitoa/moku-toa.git",
   "author": "lowfitoa <xnick411@dicolabs.kr>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3"
+  }
 }
