@@ -1,5 +1,7 @@
 const { Client, GatewayIntentBits } = require("discord.js");
 
+require("dotenv").config();
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -8,10 +10,14 @@ const client = new Client({
   ],
 });
 
+client.on("messageCreate", (msg) => {
+  if (msg.content === "ping") {
+    msg.reply("pong");
+  }
+});
+
 client.on("ready", () => {
   console.log("Bot is online!");
 });
-
-console.log(process.env.BOT_TOKEN, "console");
 
 client.login(process.env.BOT_TOKEN);
