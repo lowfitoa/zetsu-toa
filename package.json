@@ -2,7 +2,7 @@
   "name": "moku-toa",
   "version": "1.0.0",
   "description": "bot for my discord server",
-  "main": "src/bot.js",
+  "main": "index.js",
   "scripts": {
     "start": "node ."
   },
