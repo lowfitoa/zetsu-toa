@@ -7,7 +7,7 @@
     "start": "node ."
   },
   "repository": "git@github.com:lowfitoa/moku-toa.git",
-  "author": "lowfitoa <xnick411@dicolabs.kr>",
+  "author": "lowfitoa <xnick411@gmail.com>",
   "license": "MIT",
   "private": true,
   "dependencies": {
