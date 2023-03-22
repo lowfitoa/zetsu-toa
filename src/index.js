@@ -23,11 +23,20 @@ const getAgents = async () => {
 };
 
 client.on("messageCreate", async (msg) => {
-  if (msg.content === "ping") {
+  if (!msg.content.startsWith("zs")) {
+    return;
+  }
+  const content = msg.content.slice(3);
+
+  if (content === "help") {
+    msg.reply(`"zs ping" => reply pong\n"zs agents" => get all agents from valorant`);
+  }
+
+  if (content === "ping") {
     msg.reply("pong");
   }
 
-  if (msg.content === "agents") {
+  if (content === "agents") {
     const agents = await getAgents();
     await msg.reply(`${agents.map((agent) => agent.displayName).join(", ")}`);
   }
