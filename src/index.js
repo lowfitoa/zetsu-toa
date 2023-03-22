@@ -23,7 +23,7 @@ const getAgents = async () => {
 };
 
 client.on("messageCreate", async (msg) => {
-  if (!msg.content.startsWith("zs")) {
+  if (!msg.content.startsWith("zs") || message.author.bot) {
     return;
   }
   const content = msg.content.slice(3);
