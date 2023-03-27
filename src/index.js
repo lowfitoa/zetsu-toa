@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits } = require("discord.js");
+// const Valorant = require("valorant.js");
 
 const axios = require("axios");
 
@@ -23,7 +24,7 @@ const getAgents = async () => {
 };
 
 client.on("messageCreate", async (msg) => {
-  if (!msg.content.startsWith("zs") || message.author.bot) {
+  if (!msg.content.startsWith("zs") || msg.author.bot) {
     return;
   }
   const content = msg.content.slice(3);
@@ -40,6 +41,28 @@ client.on("messageCreate", async (msg) => {
     const agents = await getAgents();
     await msg.reply(`${agents.map((agent) => agent.displayName).join(", ")}`);
   }
+
+  // if (content === "toa") {
+  //   (async () => {
+  //     try {
+  //       const client = await new Valorant.RiotApiClient({
+  //         username: process.env.TOA_ID,
+  //         password: process.env.TOA_PASSWORD,
+  //         region: Valorant.Region.KR,
+  //         debug: true,
+  //       });
+
+  //       const data = await client.login();
+  //       console.log(data);
+
+  //       // const balance = await client.storeApi.getStoreOffers(client.user.Subject);
+  //       // console.log(balance);
+  //     } catch (err) {
+  //       console.error(err);
+  //       // console.log("errr");
+  //     }
+  //   })();
+  // }
 });
 
 client.on("ready", async () => {
