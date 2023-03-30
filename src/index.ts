@@ -11,16 +11,6 @@ const client = new Client({
   ],
 });
 
-const getAgents = async () => {
-  const url = "https://valorant-api.com/v1/agents";
-  try {
-    const data = axios.get(url).then(async (data) => await data.data.data);
-    return data;
-  } catch (err) {
-    console.error(err, "agent err");
-  }
-};
-
 client.on("messageCreate", async (msg) => {
   if (!msg.content.startsWith("zs") || msg.author.bot) {
     return;
@@ -28,16 +18,11 @@ client.on("messageCreate", async (msg) => {
   const content = msg.content.slice(3);
 
   if (content === "help") {
-    msg.reply(`"zs ping" => reply pong\n"zs agents" => get all agents from valorant`);
+    msg.reply(`"zs ping" => reply pong`);
   }
 
   if (content === "ping") {
     msg.reply("pong");
-  }
-
-  if (content === "agents") {
-    const agents = await getAgents();
-    await msg.reply(`${agents.map((agent: any) => agent.displayName).join(", ")}`);
   }
 
   // if (content === "toa") {
