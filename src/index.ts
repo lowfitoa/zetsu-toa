@@ -1,5 +1,4 @@
 import { Client, GatewayIntentBits } from "discord.js";
-import axios from "axios";
 
 const DISCORD_TOKEN = process.env["DISCORD_TOKEN"];
 
