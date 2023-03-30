@@ -9,8 +9,8 @@ workingtoa@gmail.com
 - `brew install dopplerhq/cli/doppler`
 - `doppler login`
 
-- `yarn start`
-- `yarn dev`
+- `yarn start` - to build
+- `yarn dev` - to dev -> reference: [nodemon](https://nodemon.io/)
 
 ### VS Code lint extensions
 
