@@ -1,4 +1,4 @@
-import { useGetTokens } from "./tokens.js";
+import { useGetTokens } from "./use-get-tokens.js";
 import { Client, GatewayIntentBits } from "discord.js";
 import axios from "axios";
 
