@@ -23,28 +23,6 @@ client.on("messageCreate", async (msg) => {
   if (content === "ping") {
     msg.reply("pong");
   }
-
-  // if (content === "toa") {
-  //   (async () => {
-  //     try {
-  //       const client = await new Valorant.RiotApiClient({
-  //         username: process.env.TOA_ID,
-  //         password: process.env.TOA_PASSWORD,
-  //         region: Valorant.Region.KR,
-  //         debug: true,
-  //       });
-
-  //       const data = await client.login();
-  //       console.log(data);
-
-  //       // const balance = await client.storeApi.getStoreOffers(client.user.Subject);
-  //       // console.log(balance);
-  //     } catch (err) {
-  //       console.error(err);
-  //       // console.log("errr");
-  //     }
-  //   })();
-  // }
 });
 
 client.on("ready", async () => {
