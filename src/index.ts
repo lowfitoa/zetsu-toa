@@ -1,8 +1,8 @@
-import { useGetTokens } from "./use-get-tokens.js";
+import { useGetTokens } from "./use-get-tokens";
 import { Client, GatewayIntentBits } from "discord.js";
 import axios from "axios";
 
-const { DISCORD_TOKEN, RIOT_KEY } = await useGetTokens();
+const DISCORD_TOKEN = process.env["DISCORD_TOKEN"];
 
 const client = new Client({
   intents: [
@@ -38,7 +38,7 @@ client.on("messageCreate", async (msg) => {
 
   if (content === "agents") {
     const agents = await getAgents();
-    await msg.reply(`${agents.map((agent) => agent.displayName).join(", ")}`);
+    await msg.reply(`${agents.map((agent: any) => agent.displayName).join(", ")}`);
   }
 
   // if (content === "toa") {
