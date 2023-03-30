@@ -4,7 +4,7 @@ workingtoa@gmail.com
 
 ### For local
 
-- I used doppler to keep some env file. check [doppler guides](guides/doppler.md) to get env files
+- I used doppler to keep some env file. check [doppler guides](https://www.doppler.com/) to manage env files.
 - `brew install gnupg`
 - `brew install dopplerhq/cli/doppler`
 - `doppler login`
