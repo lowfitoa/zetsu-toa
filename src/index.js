@@ -1,9 +1,8 @@
-const { Client, GatewayIntentBits } = require("discord.js");
-// const Valorant = require("valorant.js");
+import { useGetTokens } from "./tokens.js";
+import { Client, GatewayIntentBits } from "discord.js";
+import axios from "axios";
 
-const axios = require("axios");
-
-require("dotenv").config();
+const { DISCORD_TOKEN, RIOT_KEY } = await useGetTokens();
 
 const client = new Client({
   intents: [
@@ -67,9 +66,6 @@ client.on("messageCreate", async (msg) => {
 
 client.on("ready", async () => {
   console.log("Bot is online!");
-  const secret = process.env["DISCORD_TOKEN"];
-
-  console.log(secret);
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(DISCORD_TOKEN);

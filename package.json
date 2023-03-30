@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "bot for my discord server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "doppler run -- node src",
     "dev": "doppler run -- nodemon --watch src/ src/index.js"
