@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "doppler run -- ts-node --esm src/index.ts",
-    "dev": "doppler run -- ts-node --esm src/index.ts"
+    "dev": "doppler run -- nodemon --watch '**/*.ts' --exec 'ts-node' src/index.ts"
   },
   "repository": "git@github.com:lowfitoa/moku-toa.git",
   "author": "lowfitoa <xnick411@gmail.com>",
