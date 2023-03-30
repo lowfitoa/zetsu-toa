@@ -4,8 +4,8 @@
   "description": "bot for my discord server",
   "main": "index.js",
   "scripts": {
-    "start": "node src",
-    "dev": "nodemon --watch src/ src/index.js"
+    "start": "doppler run -- node src",
+    "dev": "doppler run -- nodemon --watch src/ src/index.js"
   },
   "repository": "git@github.com:lowfitoa/moku-toa.git",
   "author": "lowfitoa <xnick411@gmail.com>",

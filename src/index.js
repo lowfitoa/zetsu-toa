@@ -67,6 +67,9 @@ client.on("messageCreate", async (msg) => {
 
 client.on("ready", async () => {
   console.log("Bot is online!");
+  const secret = process.env["DISCORD_TOKEN"];
+
+  console.log(secret);
 });
 
 client.login(process.env.BOT_TOKEN);
