@@ -18,6 +18,7 @@ client.on("messageCreate", async (msg) => {
   console.log(content);
   console.log(msg.author.username);
   console.log(new Date());
+  // TODO toa add json parse
 
   if (content === "help") {
     msg.reply(`"zs ping" => reply pong`);
