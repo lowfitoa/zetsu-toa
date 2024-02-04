@@ -8,6 +8,8 @@ workingtoa@gmail.com
 - `brew install gnupg`
 - `brew install dopplerhq/cli/doppler`
 - `doppler login`
+- `doppler setup`
+
 
 - `yarn start` - to build
 - `yarn dev` - to dev -> reference: [nodemon](https://nodemon.io/)
