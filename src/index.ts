@@ -23,10 +23,18 @@ client.on("messageCreate", async (msg) => {
   if (content === "ping") {
     msg.reply("pong");
   }
+
+  if (content === "dice") {
+    msg.channel.send(getRandom(1, 6));
+  }
 });
 
 client.on("ready", async () => {
   console.log("Bot is online!");
 });
+
+const getRandom = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min).toString();
+};
 
 client.login(DISCORD_TOKEN);
