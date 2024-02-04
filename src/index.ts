@@ -15,6 +15,9 @@ client.on("messageCreate", async (msg) => {
     return;
   }
   const content = msg.content.slice(3);
+  console.log(content);
+  console.log(msg.author.username);
+  console.log(new Date());
 
   if (content === "help") {
     msg.reply(`"zs ping" => reply pong`);
