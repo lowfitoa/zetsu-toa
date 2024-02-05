@@ -1,5 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 
+import { rollDice } from "./funcs/rollDice";
+
 const DISCORD_TOKEN = process.env["DISCORD_TOKEN"];
 
 const client = new Client({
@@ -17,6 +19,7 @@ client.on("messageCreate", async (msg) => {
   const content = msg.content.slice(3);
 
   if (content === "help") {
+    // TODO add more commands
     msg.reply(`"zs ping" => reply pong`);
   }
 
@@ -24,17 +27,11 @@ client.on("messageCreate", async (msg) => {
     msg.reply("pong");
   }
 
-  if (content === "dice") {
-    msg.channel.send(getRandom(1, 6));
-  }
+  rollDice(msg);
 });
 
 client.on("ready", async () => {
-  console.log("Bot is online!");
+  console.log(`Logged in as ${client.user?.tag}`);
 });
-
-const getRandom = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min + 1) + min).toString();
-};
 
 client.login(DISCORD_TOKEN);
