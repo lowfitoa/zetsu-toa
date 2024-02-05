@@ -17,6 +17,10 @@ client.on("messageCreate", async (msg) => {
     return;
   }
   const content = msg.content.slice(3);
+  console.log(content);
+  console.log(msg.author.username);
+  console.log(new Date());
+  // TODO toa add json parse
 
   if (content === "help") {
     // TODO add more commands
