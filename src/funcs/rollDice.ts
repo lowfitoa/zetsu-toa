@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-
+const TIMEOUT_DURATION = 1000;
 export const rollDice = (msg: Message<boolean>) => {
   if (!msg.content.slice(3).startsWith("dice")) {
     return;
@@ -7,15 +7,18 @@ export const rollDice = (msg: Message<boolean>) => {
 
   if (msg.content.slice(8).length === 0) {
     msg
-      .reply(getRandom({ min: 1, max: 6 }))
-      .catch(console.error)
-      .finally(() => {
-        console.log("done!");
-      });
+      .reply("Rolling dice...")
+      .then((_msg) => {
+        setTimeout(() => {
+          msg.channel.send(getRandom({ min: 1, max: 6 }));
+          _msg.delete();
+        }, TIMEOUT_DURATION);
+      })
+      .catch(console.error);
+
     return;
   }
 
-  console.log(msg.content.slice(8));
   const options = msg.content.slice(8).split(" ");
   const min = parseInt(options[0]);
   const max = parseInt(options[1]);
@@ -30,15 +33,13 @@ export const rollDice = (msg: Message<boolean>) => {
 
   msg
     .reply("Rolling dice...")
-    .then((msg) => {
+    .then((_msg) => {
       setTimeout(() => {
-        msg.edit(getRandom({ min, max }));
-      }, 1000);
+        msg.channel.send(getRandom({ min, max }));
+        _msg.delete();
+      }, TIMEOUT_DURATION);
     })
-    .catch(console.error)
-    .finally(() => {
-      console.log("done!");
-    });
+    .catch(console.error);
 };
 
 interface getRandomProps {

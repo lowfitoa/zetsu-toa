@@ -1,5 +1,5 @@
 {
-  "name": "moku-toa",
+  "name": "zetsu-toa",
   "version": "1.0.0",
   "description": "bot for my discord server",
   "main": "index.ts",
@@ -9,7 +9,7 @@
     "lint": "eslint ./ --ext ts --ext tsx",
     "lint:fix": "yarn lint --fix"
   },
-  "repository": "git@github.com:lowfitoa/moku-toa.git",
+  "repository": "git@github.com:lowfitoa/zetsu-toa.git",
   "author": "lowfitoa <xnick411@gmail.com>",
   "license": "MIT",
   "private": true,
